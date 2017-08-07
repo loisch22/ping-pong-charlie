@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 
-namespace PingPong
+namespace PingPongGame.Models
 {
   public class PingPong
   {
     private int _number;
-    private static List<object> _numberList = new List<object> ();
+    private static List<object> _numberList = new List<object> {};
 
     public PingPong(int number)
     {
@@ -15,6 +16,35 @@ namespace PingPong
     public int GetNumber()
     {
       return _number;
+    }
+
+    public List<object> PingPongGame()
+    {
+      for (int i = 1; i <= _number; i++)
+      {
+        if (i % 3 == 0 && i% 5 == 0)
+        {
+          _numberList.Add("pingpong");
+        }
+        else if (i % 5 == 0)
+        {
+          _numberList.Add("pong");
+        }
+        else if (i % 3 == 0)
+        {
+          _numberList.Add("ping");
+        }
+        else
+        {
+          _numberList.Add(i);
+        }
+      }
+        return _numberList;
+    }
+
+    public static void ClearAll()
+    {
+      _numberList.Clear();
     }
 
     // public static List<object> GetNumberList()

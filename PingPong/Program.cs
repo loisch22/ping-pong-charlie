@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace PingPong
+namespace PingPongGame
 {
     public class Program
     {
